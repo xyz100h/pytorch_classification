@@ -25,7 +25,7 @@
 ### 模型介绍
 仓库中模型densenet，mobilenet,resnext模型来自于torchvision
 
-efficientnet来自于
+efficientnet来自于 https://github.com/lukemelas/EfficientNet-PyTorch
 
 build_model.py 构建模型
 
