@@ -78,3 +78,14 @@ def get_test_transform(mean=mean, std=std, size=0):
         transforms.Normalize(mean=mean, std=std),
     ])
 
+def tta_test_transform(mean=mean, std=std, size=0):
+    return transforms.Compose([
+        Resize((int(size * (256 / 224)), int(size * (256 / 224)))),
+        # transforms.CenterCrop(size),
+        transforms.RandomCrop(size),
+        transforms.RandomVerticalFlip(),
+        transforms.RandomHorizontalFlip(),
+        RandomRotate(15, 0.3),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=mean, std=std),
+    ])
