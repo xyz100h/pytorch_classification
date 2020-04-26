@@ -8,6 +8,8 @@
 * 多模型融合预测，加权与投票融合
 * 利用flask实现模型云端api部署
 * 更新使用TTA（测试时增强）的代码
+* 添加label smooth的pytorch实现（标签平滑）
+* 添加使用cnn提取特征，并使用SVM，RF，MLP，KNN等分类器进行分类。
 
 ## 运行环境
 * python3.7
@@ -43,6 +45,14 @@ python train.py
 python predict.py
 ```
 * 多模型融合的使用方式类似于预测，使用`multi-model_predict.py`进行多模型融合
+
+
+### cnn + svm
+
+
+代码存在于`cnn_ml.py`中, 利用训练好的cnn特征提取器，将得到的特征保存为pkl文件，然后训练svm分类器， 并将分类器模型保存，然后读取预测
+
+
 
 ### flask云端部署
 
